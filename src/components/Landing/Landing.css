@@ -9,3 +9,62 @@ h1{
   justify-content: center;
   align-items: center;
 }
+
+.card{
+  margin: 5px;
+}
+
+.movie_card_container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie_card1{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+}
+.movie_card2{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+}
+.movie_card3{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+}
+.movie_card4{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+}
+.movie_card5{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+}
