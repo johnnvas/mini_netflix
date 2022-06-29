@@ -12,6 +12,14 @@ h1{
 
 .card{
   margin: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 400px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
 }
 
 .movie_card_container{
@@ -22,11 +30,11 @@ h1{
   align-items: center;
   flex-wrap: wrap;
 }
-
+/*
 .movie_card1{
   display: flex;
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 200px;
   border: 1px solid black;
   border-radius: 5px;
   padding: 20px;
@@ -67,4 +75,4 @@ h1{
   border-radius: 5px;
   padding: 20px;
   margin-top: 15px;
-}
+} */

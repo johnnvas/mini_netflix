@@ -12,7 +12,7 @@ root.render (
     <BrowserRouter>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/movie" element={<MoviePage />} />
+            <Route path="/movie/:movieId" element={<MoviePage />} />
           </Routes>
         </BrowserRouter>
   );
