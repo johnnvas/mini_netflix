@@ -8,19 +8,11 @@ const MoviePage = () => {
   const seenMovies = useContext(MoviesListContext);
   console.log(seenMovies, "THIS IS THE MOVIE CONTEXT");
   //Set movieData state
-  const [movieData, setMovieData] = useState({});
+  const [movieData, setMovieData] = useState([]);
 
   //Get the movie id from the url
   const { movieId } = useParams();
-  console.log(movieId, "THIS IS THE MOVIE ARRID@@@@RR");
 
-  // const testArr = [];
-  // const testObj = {test : location}
-  // const testObj2 = { test2: location }
-  // testArr.push(testObj);
-  // console.log(testObj, "THIS IS THE MOVIE ID");
-  // testArr.push(testObj2);
-  // console.log(testArr, "THIS IS THE MOVIE ARRRR");
 
   //Lets get the movie data from the API when the page renders
   useEffect(() => {
@@ -47,7 +39,8 @@ const MoviePage = () => {
       setMovieData(seenMovies.find(movie => movie.movieId === movieId).data);
     }
     console.log(seenMovies, "OUTSIDEEEEE")
-  }, [movieId, seenMovies]);
+  }, []);
+
 
   return (
     <div className="big_container">
