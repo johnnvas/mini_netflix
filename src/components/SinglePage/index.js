@@ -1,28 +1,66 @@
-import React from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import './SingleMovie.css';
-// import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { useParams, useLocation, Link } from "react-router-dom";
+import { MoviesListContext } from "../../context/MoviesListContext";
+import "./SingleMovie.css";
 
 const MoviePage = () => {
-  // const movieHolder = [];
-  // const
+  const seenMovies = useContext(MoviesListContext);
+  console.log(seenMovies, "THIS IS THE MOVIE CONTEXT");
+  //Set movieData state
+  const [movieData, setMovieData] = useState({});
+
+  //Get the movie id from the url
   const { movieId } = useParams();
-  console.log(movieId, 'HERE IS THE MOVIE ID');
+  console.log(movieId, "THIS IS THE MOVIE ARRID@@@@RR");
 
-  const apiCall = async () => {
-    const res = await axios(`http://www.omdbapi.com/?i=${movieId}&apikey=97c51ac2`);
-    const data = res.data;
-    console.log(data, data.Title, data.Plot, data.imdbRating, 'HERE IS THE MOVIE DATA');
-  }
+  // const testArr = [];
+  // const testObj = {test : location}
+  // const testObj2 = { test2: location }
+  // testArr.push(testObj);
+  // console.log(testObj, "THIS IS THE MOVIE ID");
+  // testArr.push(testObj2);
+  // console.log(testArr, "THIS IS THE MOVIE ARRRR");
 
-  apiCall();
+  //Lets get the movie data from the API when the page renders
+  useEffect(() => {
+    if (!seenMovies.includes(movieId)) {
+      const apiCall = async () => {
+        const res = await axios(
+          `http://www.omdbapi.com/?i=${movieId}&plot=full&apikey=97c51ac2`
+        );
+        const data = res.data;
+        setMovieData(data);
+        seenMovies.push({movieId, data});
+        // console.log(
+          //   data,
+          //   data.Title,
+          //   data.Plot,
+          //   data.imdbRating,
+          //   "HERE IS THE MOVIE DATA"
+          // );
+        }
+        apiCall();
+        console.log("THIS ONLY HAPPENS INSIDE");
+    } else {
+      console.log(seenMovies, "OUTSIDE");
+      setMovieData(seenMovies.find(movie => movie.movieId === movieId).data);
+    }
+    console.log(seenMovies, "OUTSIDEEEEE")
+  }, [movieId, seenMovies]);
 
   return (
-    <div className='big_container'>
-      <h1>8</h1>
-      <img src= "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg" alt='poster_img'></img>
+    <div className="big_container">
+      <h1>{movieData.Title}</h1>
+      <img src={movieData.Poster} alt="poster_img"></img>
+      <p>{movieData.Plot}</p>
+      <p>IMDB: {movieData.imdbRating}</p>
+      <Link
+       to={`/`}
+          state={{seenMovies}}>
+        <button>Back</button>
+      </Link>
     </div>
-  )
-}
+  );
+};
 export default MoviePage;

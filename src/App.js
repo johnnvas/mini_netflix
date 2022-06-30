@@ -1,16 +1,21 @@
-import React from "react";
-import Landing from './components/Landing';
-import MoviePage from './components/SinglePage/index.js';
-import { Routes, Route } from "react-router-dom";
-import './App.css';
+import React, {useState} from "react";
+import Landing from "./components/Landing";
+import MoviePage from "./components/SinglePage/index.js";
+
+import "./App.css";
+import { MoviesListContext } from "./context/MoviesListContext";
+
 
 function App() {
+
+  const [seenMovies, setSeenMovies] = useState(['test']);
+
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/movie/:movieId" element={<MoviePage />} />
-      </Routes>
+      <MoviesListContext.Provider value={{seenMovies, setSeenMovies}}>
+        <Landing />
+        <MoviePage />
+      </MoviesListContext.Provider>
     </div>
   );
 }
