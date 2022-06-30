@@ -16,30 +16,36 @@ const MoviePage = () => {
 
   //Lets get the movie data from the API when the page renders
   useEffect(() => {
-    if (!seenMovies.includes(movieId)) {
+    let id = [];
+
+    //Get the movieID from the seenMovies array
+    for (let key in seenMovies) {
+      id.push(seenMovies[key].imdbID);
+    }
+
+    //If the movieId is NOT in the id array, then we need to call the API
+    if (!id.includes(movieId)) {
       const apiCall = async () => {
         const res = await axios(
           `http://www.omdbapi.com/?i=${movieId}&plot=full&apikey=97c51ac2`
         );
         const data = res.data;
         setMovieData(data);
-        seenMovies.push({movieId, data});
-        // console.log(
-          //   data,
-          //   data.Title,
-          //   data.Plot,
-          //   data.imdbRating,
-          //   "HERE IS THE MOVIE DATA"
-          // );
+        seenMovies.push(data);
         }
         apiCall();
         console.log("THIS ONLY HAPPENS INSIDE");
-    } else {
-      console.log(seenMovies, "OUTSIDE");
-      setMovieData(seenMovies.find(movie => movie.movieId === movieId).data);
     }
-    console.log(seenMovies, "OUTSIDEEEEE")
-  }, []);
+
+    //Else populate the page with data from the context/ NO API call
+    else {
+      for (let key in seenMovies) {
+        if (seenMovies[key].imdbID === movieId) {
+          setMovieData(seenMovies[key]);
+        }
+    }
+    }
+  }, [movieId, seenMovies]);
 
 
   return (
