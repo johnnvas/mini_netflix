@@ -97,7 +97,23 @@ $queries:(
         align-items: center;
         height: 100%;
       }
+      .movie_plot{
+        @include mobile {
+          font-size: 15px;
+      }
     }
+    .movie_rating{
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+    }
+        .back_button {
+          @include mobile {
+            position: absolute;
+            left: 145px;
+          }
+        }
 
   }
 

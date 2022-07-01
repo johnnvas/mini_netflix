@@ -3,7 +3,7 @@ import Landing from "./components/Landing";
 import MoviePage from "./components/SinglePage/index.js";
 
 import "./App.css";
-import { MoviesListContext } from "./context/MoviesListContext";
+import MoviesListContext from "./context/MoviesListContext";
 
 
 function App() {
