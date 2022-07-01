@@ -2,6 +2,7 @@
 ## About The Project
 
 ![Product Name Screen Shot](https://github.com/johnnvas/mini_netflix/blob/main/public/miniflix.landing.png)
+![Product Name Screen Shot](https://github.com/johnnvas/mini_netflix/blob/main/public/single_movie_page.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
