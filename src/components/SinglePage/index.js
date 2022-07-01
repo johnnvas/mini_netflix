@@ -7,7 +7,7 @@ import "../css/index.css";
 
 const MoviePage = () => {
   const seenMovies = useContext(MoviesListContext);
-  console.log(seenMovies, "THIS IS THE MOVIE CONTEXT");
+  // console.log(seenMovies, "THIS IS THE MOVIE CONTEXT");
   //*Set movieData state
   const [movieData, setMovieData] = useState([]);
 
@@ -35,7 +35,7 @@ const MoviePage = () => {
         seenMovies.push(data);
       };
       apiCall();
-      console.log("THIS ONLY HAPPENS INSIDE");
+      // console.log("THIS ONLY HAPPENS INSIDE");
     }
 
     //*Else populate the page with data from the context/ NO API call
