@@ -39,13 +39,7 @@ PLease check the version of node you are using
     npm i -g sass 
     npm i -g gulp-sass 
    ```
-   
-4. To start the app 
-   ```sh
-    cd mini_netflix
-    npm start
-   ```
-5. OPTIONAL - to contribute to the ```scss``` files and watch for changes made
+4. OPTIONAL - to contribute to the ```scss``` files and watch for changes made
    ```sh
     cd mini_netflix/src/components/
     gulp
@@ -58,6 +52,12 @@ PLease check the version of node you are using
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+To start the app 
+   ```sh
+    cd mini_netflix
+    npm start
+   ```
 
 This is a very simple minimalist app that allows a user to click on a movie thumbnail then navigate to a ``` movie details (movie/:movieId)``` page where the movie poster, title, description, and rating will be displayed. If it is the first time A user navigates to the page the api call will be fired. If the user has already navigated to the page and wants to view it again, there will not be an aditional ```fetch``` call. All the movie details will be extracted from a local storage that holds all the previous data calls. 
 
