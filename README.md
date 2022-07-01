@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About Mini-Flix
 
 ![Product Name Screen Shot](https://github.com/johnnvas/mini_netflix/blob/main/public/miniflix.landing.png)
 ![Product Name Screen Shot](https://github.com/johnnvas/mini_netflix/blob/main/public/single_movie_page.png)
@@ -39,7 +39,19 @@ PLease check the version of node you are using
     npm i -g sass 
     npm i -g gulp-sass 
    ```
-
+   
+4. To start the app 
+   ```sh
+    cd mini_netflix
+    npm start
+   ```
+5. OPTIONAL - to contribute to the ```scss``` files and watch for changes made
+   ```sh
+    cd mini_netflix/src/components/
+    gulp
+   ```
+   This will watch for changes made to the ```scss``` files and update the corresponding css files that were generated
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
