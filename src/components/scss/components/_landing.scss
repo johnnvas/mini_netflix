@@ -1,0 +1,36 @@
+.big_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Work Sans', sans-serif;
+
+  .movie_card_container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 400px;
+    width: 300px;
+    transition: 0.3s;
+    margin-top: 10px;
+    transition: transform 0.4s;
+    // padding: 20px;
+  }
+
+  .back_button {
+    color: $primary;
+  }
+    .card:hover {
+      transform: scale(1.05);
+    }
+}

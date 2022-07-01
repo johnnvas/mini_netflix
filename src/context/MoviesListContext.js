@@ -5,7 +5,7 @@ export const MoviesListContext = createContext([]);
 
 
 // export function MoviesListContextProvider({ props }) {
-//   const [seenMovies, setSeenMovies] = useState(['quepaso'])
+//   const [seenMovies, setSeenMovies] = useState([])
 
 
 

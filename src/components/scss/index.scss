@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;500&display=swap");
+
+//*variables and functions
+@import "variables";
+
+.landing_title {
+  color: #db0000;
+  font-family: "Bebas Neue", cursive;
+  font-size: 5rem;
+  -webkit-text-stroke: 1.5px black;
+  width: 300px;
+  margin-bottom: 3px;
+  margin-top: 10px;
+}
+body {
+  background-color: #2e2e2e;
+  /* color: #700b00; */
+  color: white;
+}
+
+@import "components/landing";
+@import "card";
+
+@import "responsive";

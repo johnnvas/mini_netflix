@@ -1,0 +1,108 @@
+$queries:(
+  mobile: 767px,
+  tablet: 991px,
+  desktop: 1199px,
+  largeDesktop: 1200px
+);
+
+@mixin mobile{
+@media only screen and (max-device-width: 390px) and (min-width: 390px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin tablet{
+  @media (max-width: map-get($queries, tablet)) {
+    @content;
+  }
+}
+@mixin desktop{
+  @media (max-width: map-get($queries, desktop)) {
+    @content;
+  }
+}
+@mixin largeDesktop{
+  @media (max-width: map-get($queries, largeDesktop)) {
+    @content;
+  }
+}
+
+
+@mixin responsive ($width:0){
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+.big_container{
+  @include mobile {
+      height: 100%;
+    }
+  .card {
+    @include mobile {
+        background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          height: 300px;
+          width: 200px;
+          padding: 5px;
+      }
+    }
+}
+
+  .poster_img{
+    @include mobile {
+      height: 300px;
+        width: 200px;
+      }
+  }
+
+  .landing_title{
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      height: 70px;
+
+      }
+  }
+
+  .movie_data_container{
+    body{
+
+          height: 150vh;
+
+    }
+    .movie_title {
+     @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        height: 70px;
+      }
+    }
+    .movie_page_poster{
+      @include mobile {
+          height: 50vh;
+          width: 60vw;
+        }
+    }
+    .plot_rating_container{
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+  }
+
+  body{
+    @include mobile {
+      height: 220vh;
+      }
+  }
